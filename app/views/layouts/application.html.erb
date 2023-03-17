@@ -28,15 +28,22 @@
 <li>
    <a href= "/characters">Characters</a>
 </li>
+
+<% if session.fetch(:user_id) == nil %>
+
 <!--#user not signed in-->
-<% if  session.fetch(:user_id) == nil %> 
+<!--% if  @current_user == nil %--> 
 <li>
    <a href= "/user_sign_up">Sign up</a>
 </li>
 <li>
    <a href= "/user_sign_in">Sign in</a>
 </li>
+
 <%else%>
+<li>
+   <a href= "/bookmarks"> My Bookmarks</a>
+</li>
 <li>
    <a href= "/user_sign_out">Sign out</a>
 </li>
